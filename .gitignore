@@ -1,3 +1,8 @@
+### Projct ###
+
+# Build files
+dist/
+
 # Created by https://www.gitignore.io/api/vim,git,node
 # Edit at https://www.gitignore.io/?templates=vim,git,node
 
