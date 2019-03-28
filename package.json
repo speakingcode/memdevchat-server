@@ -12,9 +12,17 @@
     "init": "mkdir dist",
     "clean": "rm -rf dist",
     "prebuild": "npm run clean && npm run init",
-    "build": "babel ./src -d ./dist --ignore spec.js",
+    "build": "babel ./src -d ./dist --ignore \"src/**/*.spec.js\",\"src/**/*.test.js\"",
     "pretest": "npm run build",
     "test": "jest"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-object-rest-spread"
+    ]
   },
   "author": "@speakingcode",
   "license": "Beerware",
