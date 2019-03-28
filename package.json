@@ -7,6 +7,14 @@
     "dist"
   ],
   "scripts": {
+    "start": "npm run dev",
+    "dev": "npm test -- -watchAll",
+    "init": "mkdir dist",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean && npm run init",
+    "build": "babel ./src -d ./dist --ignore spec.js",
+    "pretest": "npm run build",
+    "test": "jest"
   },
   "author": "@speakingcode",
   "license": "Beerware",
