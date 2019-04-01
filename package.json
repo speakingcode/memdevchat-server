@@ -7,8 +7,9 @@
     "dist"
   ],
   "scripts": {
+    "prestart": "npm run build",
     "start": "npm run dev",
-    "dev": "npm test -- -watchAll",
+    "dev": "babel-node ./dist/index.js",
     "init": "mkdir dist",
     "clean": "rm -rf dist",
     "prebuild": "npm run clean && npm run init",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "babel-jest": "^24.5.0",
