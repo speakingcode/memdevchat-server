@@ -9,7 +9,7 @@
   "scripts": {
     "prestart": "npm run build",
     "start": "npm run dev",
-    "dev": "babel-node ./dist/index.js",
+    "dev": "NODE_ENV='development' babel-node ./dist/index.js",
     "init": "mkdir dist",
     "clean": "rm -rf dist",
     "prebuild": "npm run clean && npm run init",
@@ -34,7 +34,8 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "babel-jest": "^24.5.0",
-    "jest": "^24.5.0"
+    "jest": "^24.5.0",
+    "remote-redux-devtools": "^0.5.16"
   },
   "dependencies": {
     "redux": "^4.0.1",
