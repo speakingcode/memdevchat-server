@@ -8,32 +8,11 @@ import {
 
 import { composeWithDevTools } from 'remote-redux-devtools'
 
+import reducer from './reducers'
 
 export default () => {
   const store = createStore(
-    (
-      state = {
-        messages: [],
-        messageInput: '',
-      },
-      action
-    ) => {
-      switch (action.type) {
-        case 'SET_MESSAGE_INPUT':
-          return {
-            messages: state.messages,
-            messageInput: action.messageInput
-          }
-        case 'SUBMIT_MESSAGE':
-          return {
-            messages: [...state.messages, action.message],
-            messageInput: ''
-          }
-        default:
-          return state
-      }
-      action.payload
-    },
+    reducer,
     composeWithDevTools(
       applyMiddleware(
         logger
